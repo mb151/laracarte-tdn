@@ -1,11 +1,14 @@
 @component('mail::message')
 # Hey Bachir 
 
-- {{$name}}
-- {{$email}}
+- {{$msg->name}}
+- {{$msg->email}}
+
+
+{!!date("Y-m-d H:i:s") !!}
 
 @component('mail::panel')
-{{$msg}}
+{{$msg->message}}
 @endcomponent
 
 
