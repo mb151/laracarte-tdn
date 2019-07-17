@@ -5,7 +5,7 @@
         <div class="row">
             <div class = "col-md-6 col-md-offset-3 col-sm-9 col-sm-offset-2">
                 <h2>Get In Touch</h2>
-                <p class="text-muted">If you having trouble with service, please <a href="mailto:mahamadou208@gmail.com"> ask for help.</a></p>
+                <p class="text-muted">If you having trouble with service, please <a href="mailto:{{config('laracarte.admin_support_email')}}"> ask for help.</a></p>
                 {{--$errors->has : pour colorer l'input name en rouge en cas d'erreur--}}
                 <form action="{{route('contact_path')}}" method="POST">
                     {{ csrf_field() }}
