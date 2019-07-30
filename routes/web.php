@@ -13,26 +13,9 @@ use App\Mail\ContactMessageCreated;
 */
 
 
-Route::get('/', [
-    'as' => 'root_path',
-    'uses' => 'PagesController@home'
-]);
+Route::view('/', 'pages.home')->name('home');
+Route::view('/about', 'pages.about')->name('about');
+Route::get('/contact', 'ContactsController@create')->name('contacts.create');
+Route::post('/contact', 'ContactsController@store')->name('contacts.store');
 
-Route::get('/about', [
-    'as' => 'about_path',
-    'uses' => 'PagesController@about'
-]);
 
-Route::get('/contact', [
-    'as' => 'contact_path',
-    'uses' => 'ContactsController@create'
-]);
-
-Route::post('/contact', [
-    'as' => 'contact_path',
-    'uses' => 'ContactsController@store'
-]);
-
-Route::get('foo', function () {
-    return 'Hello World';
-});

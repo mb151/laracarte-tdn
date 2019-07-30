@@ -24,8 +24,15 @@ class HelpersTest extends TestCase
 
     /** @test */
 
-    public function route_test_if_is_active()
+    public function set_active_route_should_return_the_correct_class_based_on_a_given_route()
     {
-        $this->assertTrue(set_active_route(''));
+        $this->get(route('home'));
+        $this->assertEquals('active', set_active_route('home'));
+        $this->assertEquals('', set_active_route('about'));
+
+        $this->get(route('contacts.create'));
+        $this->assertEquals('active', set_active_route('contacts.create'));
+        $this->assertEquals('', set_active_route('home'));
+        $this->assertEquals('', set_active_route('about'));
     }
 }
