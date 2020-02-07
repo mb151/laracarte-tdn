@@ -14,8 +14,6 @@ jobs:
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
-    - uses: michaelw90/PHP-Lint@1.0.0
-    - name: PHP Lint
   
       run: chmod -R 777 storage bootstrap/cache
     - name: Create Database
